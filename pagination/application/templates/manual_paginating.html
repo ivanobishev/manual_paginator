@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manual Paginating</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/paginating.css' %}">
+    </head>
+    <body>
+        <h1>Manual paginating</h1>
+        <div id="container">
+            {% if current_report %}
+                <h2>{{ current_report.title }}</h2>
+                <hr/>
+                <p>{{ current_report.text }}</p>
+            {% else %}
+                <span class="warning">Sorry but this report was NOT found.</span>
+            {% endif %}
+        </div>
+        <div id="container-pagination">         
+            {% if page_links %}
+                {% for page in page_links %}
+                    {% if page.1 != "." %}
+                        <scan class="pagination-box">
+                    {% else %}
+                        <scan class="dot">
+                    {% endif %}
+                    <a href="/{{ page.0.pk }}/">
+                        {{ page.1 }}
+                    </a>
+                    </scan>
+                {% endfor %}
+            {% else %}
+                <p>No pages to display.</p>
+            {% endif %}
+        </div>
+    </body>
+</html>

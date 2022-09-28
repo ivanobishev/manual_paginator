@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/index.css' %}">
+    </head>
+    <body>
+        <h1>Exercise</h1>
+        <div id="container">
+            <a href="/1/">Go to the first report</a>
+        </div>
+        <!--{% if reports_list %}
+            <ul>
+                {% for i in reports_list %}
+                    <li>
+                        <a href="/{{ i.pk }}/">
+                            {{ i.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no reports yet in the database.</p>
+        {% endif %}-->
+    </body>
+</html>

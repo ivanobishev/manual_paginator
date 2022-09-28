@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+h1 {
+    font-size: 1.3em;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.warning {
+    background-color: #ff8080;
+    padding: 0.25em;
+}
+
+#container {
+    background-color: #cce6ff;
+    border: 1px solid #999999;
+    margin: auto;
+    width: 50%;
+    padding: 0.5em;
+    text-align: center;
+}
+
+#container-pagination {
+    margin: auto;
+    width: 30%;
+    padding: 0.5em;
+}
+
+.pagination-box {
+    display: inline-block;
+    border: 1px solid #999999;
+    margin-right: 0.5em;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    margin-right: 0.25em;
+}
