@@ -40,6 +40,10 @@ a {
     padding: 0.1em;
 }
 
+#current-box {
+    background-color: yellow;
+}
+
 .dot {
     display: inline-block;
     margin-right: 0.25em;

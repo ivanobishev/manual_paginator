@@ -1,0 +1,26 @@
+#main-container {
+    text-align: center;
+    font-family: tahoma;
+}
+
+.box {
+    display: inline-block;
+    border: 1px solid #333333;
+    border-radius: 15px;
+    background-color: #333333;
+    text-align: center;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+}
+
+.box a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#current {
+    background-color: #0099ff;
+    color: #fff;
+}

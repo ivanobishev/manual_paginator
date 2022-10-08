@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Default Paginating</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/default.css' %}">
+    </head>
+    <body>
+        <a href="../">Go back</a>
+        <h1>Default pagination</h1>
+        <div id="main-container">
+            {% for report in page_obj %}
+                <h2>{{ report.title }}</h2>
+                {{ report.text }}
+                <hr/>
+        {% endfor %}
+        </div>
+        <div class="pagination">
+            <span class="step-links">
+            {% if page_obj.has_previous %}
+                {% if 1 != page_obj.previous_page_number %}
+                    <span class="box">
+                        <a href="?page=1">1</a>
+                    </span>
+                {% endif %}
+                {% if page_obj.number|add:"-1" > 2 %}
+                    ...
+                {% endif %}
+                <span class="box">
+                    <a href="?page={{ page_obj.previous_page_number }}">
+                        {{ page_obj.number|add:"-1" }}
+                    </a>
+                </span>
+            {% endif %}
+            <span class="box" id="current">
+                {{ page_obj.number }}
+            </span>
+            {% if page_obj.has_next %}
+                <span class="box">
+                    <a href="?page={{ page_obj.next_page_number }}">
+                        {{ page_obj.number|add:"1" }}
+                    </a>
+                </span>
+                {% if page_obj.number|add:"2" < page_obj.paginator.num_pages %}
+                    ...
+                {% endif %}
+                {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
+                    <span class="box">
+                        <a href="?page={{ page_obj.paginator.num_pages }}">
+                            {{ page_obj.paginator.num_pages }}
+                        </a>
+                    </span>
+                {% endif %}
+            {% endif %}
+            </span>
+        </div>
+    </body>
+</html>
